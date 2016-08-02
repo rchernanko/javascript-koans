@@ -42,6 +42,25 @@ describe("About Functions", function() {
 
   it("should use lexical scoping to synthesise functions", function () {
 
+    /*
+
+    I think I get this but it took me a while, and I would still need more practice
+
+    Anyway, a good stack overflow article here:
+
+    http://stackoverflow.com/questions/17605471/lexical-scoping-parameters-in-javascript
+
+    When we call makeMysteryFunction(3) it returns a function (newFunction) and
+    assigns it to the variable mysteryFunction3. The makerValue of this function
+    is already set to 3
+
+    Then, when mysteryFunction3(10) is called, it adds the makerValue (3) and then
+    adds it together with the param that has been passed in - 10.
+
+    TODO read more about lexical scoping
+
+    */
+
     function makeMysteryFunction(makerValue)
     {
       var newFunction = function doMysteriousThing(param)
@@ -54,7 +73,7 @@ describe("About Functions", function() {
     var mysteryFunction3 = makeMysteryFunction(3);
     var mysteryFunction5 = makeMysteryFunction(5);
 
-    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe('');
+    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(23);
   });
 
   it("should allow extra function arguments", function () {
