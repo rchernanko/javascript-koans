@@ -29,7 +29,17 @@ describe("About Objects", function () {
     };
 
     var battleCry = megalomaniac.battleCry(4);
-    expect(FILL_ME_IN).toMatch(battleCry);
+    expect('They are Pinky and the Brain Brain Brain Brain').toMatch(battleCry);
+
+    /*
+
+    This one took me a while to get but I now do.
+    Key thing is that the join puts a "Brain" in between each element in the Array
+
+    There is a very simple explanation within this stackoverflow post:
+
+    http://stackoverflow.com/questions/18621748/in-this-excerpt-from-javascript-koans-what-is-the-arrayfoo1-all-about
+    */
   });
 
   it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
@@ -44,7 +54,7 @@ describe("About Objects", function () {
       }
     };
 
-    expect(currentYear).toBe(FILL_ME_IN);
+    expect(currentYear).toBe(2016);
     expect(megalomaniac.calculateAge()).toBe(FILL_ME_IN);
   });
 
